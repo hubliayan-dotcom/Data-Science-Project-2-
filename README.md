@@ -1,51 +1,70 @@
-# 💰 SpendWise Analytics — Data Science & Financial Intelligence
+# 💰 SpendWise Analytics
 
-## 🌟 Project Overview
-**SpendWise Analytics** is a high-fidelity **Data Science Project** designed to provide automated financial intelligence. Far beyond a simple dashboard, this platform implements a full-stack analytical pipeline: from raw data acquisition and cleaning to sophisticated feature engineering and decision-support insight generation.
+## 📝 Project Overview
+**SpendWise Analytics** is a financial analytics dashboard that simulates how expense tracking platforms process raw transaction data, generate spending insights, detect anomalies, and help users make better financial decisions.
+
+The project demonstrates a complete analytics workflow including data simulation, preprocessing, feature engineering, KPI generation, anomaly detection, and dashboard visualization using React and TypeScript.
 
 ---
 
-## 🏗️ Data Science Architecture
-This project implements the **CRISP-DM** inspired workflow:
+## 🎯 Business Problem
+Manual expense tracking makes it difficult to identify overspending patterns and savings opportunities. This project demonstrates how financial analytics systems transform raw transactions into actionable insights through data processing and dashboard visualization.
 
-### 1. Data Acquisition & Simulation (Phase 1)
-- Generates high-variance "Dirty Raw Data" representing unformatted transaction logs.
-- Simulates noisy categorical names and string-formatted quantitative variables.
+---
 
-### 2. Preprocessing & Data Cleaning (Phase 2)
-- **Normalization:** Trimming whitespace and case-standardizing labels.
-- **Type Conversion:** Handling string-to-float parsing for statistical computation.
-- **Consistency Gating:** Mapping raw identifiers to strict project schemas.
+## 🏗️ Data Pipeline Workflow
+The system follows a structured analytical pipeline to ensure data integrity and actionable outputs:
 
-### 3. Feature Engineering (Phase 3)
-- **Temporal Analysis:** Extracting `Is_Weekend` and `Month` features from raw timestamps.
-- **Outlier Detection:** Implementing dynamic thresholds to flag "High Spend" anomalies (>1.5x category mean).
-- **Statistical Smoothing:** Calculating `Rolling 7-Transaction Moving Averages` (MA7) to identify spending velocity.
+**Raw Transactions** 
+→ **Data Cleaning & Standardization** (Handling noise, whitespace, and type casting)
+→ **Feature Engineering** (Calculating rolling averages, weekend flags, and temporal indices)
+→ **KPI Aggregation** (Summarizing income, expenses, and savings rates)
+→ **Anomaly Detection** (Threshold-based outlier identification)
+→ **Dashboard Visualization** (Interactive charts for trend analysis)
+→ **Automated Insights** (Decision-support summaries)
 
-### 4. Decision Support & Insights (Phase 4)
-- **Heuristic Modeling:** Logic-based engines generating real-time warnings (e.g., Critical Savings Rate alerts).
-- **Behavioral Analysis:** Identifying top "Cost Drivers" using data aggregation.
-- **Automated Alerts:** Visual flags for anomalous behavior to assist in immediate decision-making.
+---
+
+## 💡 Business Insights Generated
+- **Anomaly Detection:** Detected unusually high spending when a transaction exceeded 1.5× the category average.
+- **Cost Driver Analysis:** Identified the highest cost driver category across all processed expenses.
+- **Financial Health Monitoring:** Calculated savings rate in real-time based on income vs expenses.
+- **Trend Identification:** Generated rolling spending averages to monitor short-term expense trends and velocity.
 
 ---
 
 ## 🚀 Key Features
-- **Real-time Pipeline:** Watch the "Acquisition → Cleaning → Engineering" sequence execute in the browser.
-- **DS Dashboard:** Track Income-to-Expense ratios, Savings velocity, and Anomaly counts.
-- **Insight Panel:** AI-style summaries providing actionable financial advice.
-- **Flagged Data Grid:** Detailed view showing the metadata and analysis flags attached to every transaction record.
+- **Data Simulation:** Simulates raw transaction data with inconsistent labels and noisy values to mimic real-world financial feeds.
+- **Data Cleaning:** Automatically standardizes records and handles data type conversion before analysis.
+- **Feature Engineering:** Computes rolling averages and weekend flags to add behavioral context.
+- **Automated Anomaly Detection:** Flags overspending anomalies using robust threshold-based rules.
+- **Real-time KPI Metrics:** Generates core financial indicators including total income, expenses, savings rate, and anomaly counts.
+- **Interactive Dashboards:** Presents analysis through high-fidelity charts and specialized transaction tables.
 
 ---
 
 ## 🛠️ Tech Stack
-| Tier | Technology |
-| :--- | :--- |
-| **Logic/Pipeline** | TypeScript ES2022 |
-| **Analysis** | custom Data Processing Engine |
-| **UI/UX** | React 19 + Tailwind CSS |
-| **Visualization** | Recharts (Linear & Categorical) |
-| **Animations** | Motion |
-| **Temporal Logic** | date-fns |
+- **Frontend/UI:** React 19, Tailwind CSS, Motion
+- **Data Analysis Logic:** TypeScript ES2022
+- **Data Visualization:** Recharts
+- **Temporal Management:** date-fns
+
+---
+
+## 📸 Screenshots
+*(Note: Replace these placeholders with actual screenshots from your running app)*
+
+### Dashboard Overview
+![Dashboard](https://picsum.photos/seed/dashboard/1200/600)
+*The main overview presenting real-time KPIs and trend visualizations.*
+
+### Automated Insights
+![Insights](https://picsum.photos/seed/insights/1200/300)
+*Actionable summaries generated by the analytical engine.*
+
+### Engineered Transaction Feed
+![Feed](https://picsum.photos/seed/feed/1200/400)
+*Detailed grid showing cleaned data with anomaly flags and moving averages.*
 
 ---
 
@@ -65,13 +84,20 @@ This project implements the **CRISP-DM** inspired workflow:
 
 ---
 
-## 🎙️ Interview Preparation (DS Focus)
-- **Q: How is "High Spend" defined?**
-  - *A: We calculate the mean for each category dynamically. Any transaction exceeding 1.5 standard deviations or a fixed 1.5x multiplier against the mean is flagged as a behavioral outlier.*
-- **Q: Why use a rolling average?**
-  - *A: In financial data, individual transactions are noisy. A 7-day rolling average (MA7) smooths variance to reveal the true underlying spending velocity.*
-- **Q: How does the pipeline handle scaling?**
-  - *A: The cleaning and engineering logic is decoupled from the UI, allowing it to be easily ported to a backend Node.js worker or a Python microservice for processing millions of records.*
+## 🎙️ Interview Preparation
+### How is overspending detected?
+The application calculates the average spend for each category and flags any transaction that exceeds 1.5× that average as an anomaly.
+
+### Why use rolling averages?
+Rolling averages smooth short-term fluctuations and help identify recent spending trends more accurately.
+
+### How does the pipeline handle inconsistent data?
+We implement a cleaning layer that trims strings, standardizes category casing, and converts string-based currency values into numeric types for stable calculation.
 
 ---
-**Advanced Financial Intelligence | Built for Placement Success**
+
+## 💎 Why This Project Matters
+Expense tracking systems are widely used in fintech platforms to help users understand spending behavior, identify anomalies, and improve savings decisions. This project simulates that workflow by combining data preprocessing, behavioral analysis, and dashboard reporting in a single analytics application.
+
+---
+**Financial Analytics | Data-Driven Decision Support**
