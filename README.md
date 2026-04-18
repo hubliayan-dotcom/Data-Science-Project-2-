@@ -20,6 +20,10 @@ Manual expense tracking makes it difficult to identify overspending patterns and
 
 ---
 
+## 🚀 Live Demo
+[**Click here to view the Live Dashboard**](https://ais-dev-5gfskvwbzr4fshvlnxr5ws-50948685477.asia-southeast1.run.app)
+
+
 ## 🏗️ Data Pipeline Workflow
 The system follows a structured analytical pipeline to ensure data integrity and actionable outputs:
 
